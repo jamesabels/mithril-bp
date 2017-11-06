@@ -1,13 +1,15 @@
-import greet from './modules/greet';
-import Hello from './classes/Hello';
+import * as m from 'mithril';
 
-// Initalize Elements
-const app = document.createElement('div');
-const message = new Hello();
+// Import namespaces
+import { App } from './namespaces/App';
 
-// Assign Class Name 
-app.className = 'app'
+// Import Pages
+import HomePage from './pages/Home';
+import AboutPage from './pages/About';
+import MithrilPage from './pages/Mithril';
 
-// Append App to dom
-document.body.appendChild(app);
-message.render(app, 'h1', greet('World!'));
+m.route(document.body, '/', {
+  '/': HomePage,
+  '/about': AboutPage,
+  '/mithril': MithrilPage
+})

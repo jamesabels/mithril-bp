@@ -4,6 +4,8 @@
   "description": "A boilerplate for typescript projects",
   "main": "webpack.config.js",
   "dependencies": {
+    "@types/mithril": "^1.1.11",
+    "mithril": "^1.1.5"
   },
   "devDependencies": {
     "@types/node": "^8.0.47",

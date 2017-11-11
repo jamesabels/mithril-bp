@@ -2,13 +2,14 @@ import * as m from 'mithril';
 
 // Import namespaces
 import { App } from '../namespaces/App';
+import { Sidebar } from '../namespaces/Sidebar';
 
-export default class Sidebar {
+export default class SidebarComponent {
   oncreate () {
     console.log(`A Sidebar was created`);
   }
-  _sidebarList (items: Array<App.sidebarItem>) {
-    return items.map(function (item: App.sidebarItem) {
+  _sidebarList (items: Array<Sidebar.sidebarItem>) {
+    return items.map(function (item: Sidebar.sidebarItem) {
       return m('li', {class: 'sidebar-item', key:`${item.label}-item`}, [
           m('a', {href: `#!${item.link}`}, `${item.label}`)
       ])

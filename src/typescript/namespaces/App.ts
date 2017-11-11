@@ -1,14 +1,14 @@
+interface State {
+  mode: String;
+  users: any;
+}
+
 export namespace App {
-  export const state = {
-    mode: 'view'
-  }
-  export const sidebarItems = [
-    { label: 'Home', link: '/home'},
-    { label: 'About', link: '/about'},
-    { label: 'Mithril', link: '/mithril'}
-  ]
-  export interface sidebarItem {
-    label: String,
-    link: String
+  export const state: State = {
+    mode: 'view',
+    users: []
+  };
+  export function setState(stateKey: string, value: any) {
+    state[stateKey] = value;
   }
 }

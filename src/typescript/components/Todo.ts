@@ -12,17 +12,19 @@ const state: any = {
 export default class TodoComponent {
     oninit (vnode: any) {
         state.title = vnode.attrs.title;
-        console.log('Users', vnode.attrs.users);
     }
     _onSubmit (e: any) {
         e.preventDefault();
         let input = e.srcElement[0];
-        App.state.todos.push({value: input.value });
-        input.value = null;
+        if (input.value === '' || input.value === null) {
+            return;
+        } else {
+            App.state.todos.push({value: input.value });
+            input.value = null;
+        }
     }
     _onDelete (todo: any) {
         let todos = App.state.todos;
-
         todos.splice(todos.indexOf(todo), 1);
     }
     _renderTodos (that: any, todos: any) {
@@ -59,10 +61,7 @@ export default class TodoComponent {
                             m('button.btn.btn-primary.column.col-2', {type: 'submit' }, [
                                 m('i.icon.icon-check')
                             ])
-                        ]),
-                        // m('div.card-footer', [
-                        //     m('button.col-6', {type: 'submit' }, 'Submit')
-                        // ])
+                        ])
                     ]),
                 ]
             ])

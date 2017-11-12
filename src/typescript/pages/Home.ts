@@ -11,6 +11,7 @@ import MainLayout from '../layouts/Main';
 // Import components
 import SidebarComponent from '../components/Sidebar';
 import MainComponent from '../components/Main';
+import TodoComponent from '../components/Todo';
 
 export default class HomePage {
   oninit (vnode: any) {
@@ -20,12 +21,10 @@ export default class HomePage {
     return m(MainLayout, {
       class: 'app',
       sidebar: m(SidebarComponent, { items: Sidebar.state.sidebarItems }),
-      main: m(MainComponent, {
+      main: m(TodoComponent, {
         title: 'Home',
-        users: App.state.users
+        todos: App.state.todos
       })
-    },[
-      m('p', `This is the home view of your mithril app`)
-    ]);
+    });
   }
 }

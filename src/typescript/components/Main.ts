@@ -14,12 +14,16 @@ export default class MainComponent {
     state.title = vnode.attrs.title;
     console.log('Users', vnode.attrs.users);
   }
-   _renderUsers (users: any) {
+  testClick (userid: string) {
+      console.log('Testing click ', userid);
+  }
+   _renderUsers (that: any, users: any) {
     return users.map(function (user: any) {
         return (
             m('div.user-wrap.row', [
                 m('h3.col-2', `Username:`),
-                m('p.col-10', `${user.username}`)
+                m('p.col-10', `${user.username}`),
+                m('button', {onclick: () => { that.testClick(user.name) }}, 'Test Button')
             ])
         )
     })
@@ -27,7 +31,7 @@ export default class MainComponent {
   view (vnode: any) {
     return [
       m('h1', vnode.attrs.title),
-      this._renderUsers(vnode.attrs.users)
+      this._renderUsers(this, vnode.attrs.users)
     ]
   }
 }

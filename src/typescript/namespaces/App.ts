@@ -1,12 +1,16 @@
 interface State {
   mode: String;
   users: any;
+  todos: Array<object>;
 }
 
 export namespace App {
   export const state: State = {
     mode: 'view',
-    users: []
+    users: [],
+    todos: [
+      {value: 'This is a todo from App'}
+    ]
   };
   export function setState(stateKey: string, value: any) {
     state[stateKey] = value;

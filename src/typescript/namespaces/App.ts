@@ -8,9 +8,7 @@ export namespace App {
   export const state: State = {
     mode: 'view',
     users: [],
-    todos: [
-      {value: 'This is a todo from App'}
-    ]
+    todos: []
   };
   export function setState(stateKey: string, value: any) {
     state[stateKey] = value;

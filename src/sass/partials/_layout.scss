@@ -1,21 +1,15 @@
-$mainPadding: 20px;
-$sidebarPadding: 10px;
-
 .app {
   padding: 0;
   margin: 0;
+  overflow: hidden;
   .sidebar-wrap {
-    background-color: darken(whitesmoke, 10%);
     height: 100%;
+    background-color: whitesmoke;
     .sidebar-content {
-      padding: $sidebarPadding;
       ul {
         padding: 0;
         list-style-type: none;
         li {
-          font-size: 20px;
-          letter-spacing: 0.03em;
-          margin: 5px 0 10px 0;
           text-decoration: none;
           a {
             text-decoration: none;
@@ -25,10 +19,7 @@ $sidebarPadding: 10px;
     }
   }
   .main-wrap {
-    background-color: whitesmoke;
     height: 100%;
-    .main-content {
-      padding: $mainPadding;
-    }
+    overflow: auto;
   }
 }

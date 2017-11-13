@@ -2,11 +2,24 @@ import * as m from 'mithril';
 
 // Import namespaces
 import { App } from '../namespaces/App';
-import { Sidebar } from '../namespaces/Sidebar';
 
+// Interfaces
+interface sidebarItem {
+    label: String,
+    link: String
+}
+
+// Model
+const state = {
+    sidebarItems: [
+        { label: 'Home', link: '/home'},
+    ]
+};
+
+// View
 export default class SidebarComponent {
-  _sidebarList (items: Array<Sidebar.sidebarItem>) {
-    return items.map(function (item: Sidebar.sidebarItem) {
+  _sidebarList (items: Array<sidebarItem>) {
+    return items.map(function (item: sidebarItem) {
       return m('li.nav-item', {key:`${item.label}-item`}, [
           m('a', {href: `#!${item.link}`}, `${item.label}`)
       ])
@@ -14,12 +27,12 @@ export default class SidebarComponent {
   }
   view (vnode: any) {
     return [
-        m('div.sidebar-wrap.column.col-3.panel', [
+        m('div.column.col-3.panel', {style:{background: 'whitesmoke'}} , [
             m('div.panel-header', [
               vnode.attrs.title
             ]),
-            m('div.sidebar-content.panel-body', [
-                m('ul.nav', [ this._sidebarList(vnode.attrs.items) ])
+            m('div.panel-body', [
+                m('ul.nav', [ this._sidebarList(state.sidebarItems) ])
             ]),
             m('div.panel-footer.columns', [
                 m('a.btn.btn-primary.column', {href: '#!/about'}, [

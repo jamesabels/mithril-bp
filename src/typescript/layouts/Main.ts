@@ -7,7 +7,6 @@ export default class MainLayout {
       m('div.main-wrap.column.col-9', [
         m('div.main-content', [
           vnode.attrs.main,
-          vnode.children
         ])
       ])
     ])

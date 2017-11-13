@@ -4,7 +4,8 @@ import * as m from 'mithril';
 import { App } from '../namespaces/App';
 
 // Import Components
-import TodoComponent from './Todo'
+import TodoComponent from './Todo';
+import EmptyComponent from './Empty';
 
 // Model
 const state: any = {
@@ -68,16 +69,13 @@ export default class TodoListComponent {
             })
         } else {
             return [
-                m('div.empty', {style: {backgroundColor: 'white'} }, [
-                    m('div.empty-icon', [
-                        m('i.icon.icon-4x.text-success.icon-check')
-                    ]),
-                    m('p.empty-title.h5', 'You have nothing to do'),
-                    m('p.empty-subtitle', 'Unless you are a liar'),
-                    m('div.empty-action', [
-                        that._renderInput(that)
-                    ])
-                ])
+               m(EmptyComponent, {
+                verb: 'success',
+                icon: 'check',
+                title: 'You are out of things to do',
+                subtitle: `Assuming you're not a liar`,
+                action: that._renderInput(that)   
+               })
             ]
         }
     }

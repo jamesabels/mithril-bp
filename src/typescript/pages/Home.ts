@@ -10,7 +10,6 @@ import MainLayout from '../layouts/Main';
 
 // Import components
 import SidebarComponent from '../components/Sidebar';
-import MainComponent from '../components/Main';
 import TodoListComponent from '../components/TodoList';
 
 export default class HomePage {
@@ -20,7 +19,7 @@ export default class HomePage {
   view (vnode: any) {
     return m(MainLayout, {
       class: 'app',
-      sidebar: m(SidebarComponent, { items: Sidebar.state.sidebarItems, title: 'Todo App' }),
+      sidebar: m(SidebarComponent, { title: 'Todo App' }),
       main: m(TodoListComponent, {
         title: 'Home',
         todos: App.state.todos

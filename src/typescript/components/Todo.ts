@@ -33,7 +33,7 @@ export default class TodoComponent {
         } else {
             return [
                 m('div.form-wrap.mt-2'), [
-                    m('form#todoForm.card', {onsubmit: (e) => { vnode.attrs.onUpdate(e, vnode.attrs.todo) }}, [
+                    m('form.form-group#todoForm.card', {onsubmit: (e) => { vnode.attrs.onUpdate(e, vnode.attrs.todo) }}, [
                         m('div.card-header.columns', [
                             m('input#todoInput.form-input.column.col-10', {ref: 'todo-input', type: 'text', value: vnode.attrs.todo.value}),
                             m('div.button-wrap.column.col-ml-auto', [

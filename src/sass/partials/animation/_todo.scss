@@ -1,0 +1,29 @@
+#todo-input {
+    @include fadeIn(
+        $duration: .5s,
+        $count: 1,
+        $delay: 0s,
+        $function: ease, 
+        $fill: both
+    );
+}
+
+#todo-wrap {
+    @include fadeIn(
+        $duration: .5s,
+        $count: 1,
+        $delay: .5s,
+        $function: ease, 
+        $fill: both
+    );
+}
+
+#empty-todo {
+    @include bounceIn(
+        $duration: .5s,
+        $count: 1,
+        $delay: 0s,
+        $function: ease, 
+        $fill: both
+    );
+}

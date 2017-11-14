@@ -1,34 +1,19 @@
-$mainPadding: 20px;
-$sidebarPadding: 10px;
+html {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+    body {
+        padding: 0;
+        margin: 0;
+    }
+}
 
 .app {
   padding: 0;
   margin: 0;
-  .sidebar-wrap {
-    background-color: darken(whitesmoke, 10%);
-    height: 100%;
-    .sidebar-content {
-      padding: $sidebarPadding;
-      ul {
-        padding: 0;
-        list-style-type: none;
-        li {
-          font-size: 20px;
-          letter-spacing: 0.03em;
-          margin: 5px 0 10px 0;
-          text-decoration: none;
-          a {
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
+  overflow: hidden;
   .main-wrap {
-    background-color: whitesmoke;
     height: 100%;
-    .main-content {
-      padding: $mainPadding;
-    }
+    overflow: auto;
   }
 }

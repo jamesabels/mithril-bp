@@ -12,7 +12,8 @@ interface sidebarItem {
 // Model
 const state = {
     sidebarItems: [
-        { label: 'Home', link: '/home'},
+        { label: 'Home', link: '/'},
+        { label: 'Settings', link: '/settings'}
     ]
 };
 
@@ -35,10 +36,10 @@ export default class SidebarComponent {
                 m('ul.nav', [ this._sidebarList(state.sidebarItems) ])
             ]),
             m('div.panel-footer.columns', [
-                m('a.btn.btn-primary.column', {href: '#!/about'}, [
+                m('a.btn.btn-primary.column', {href: '#!/'}, [
                     m('i.icon.icon-people')
                 ]),
-                m('a.btn.btn-primary.ml-2.column', {href: '#!/about'}, [
+                m('a.btn.btn-primary.ml-2.column', {href: '#!/settings'}, [
                     m('i.icon.icon-shutdown')
                 ])
             ])

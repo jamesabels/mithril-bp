@@ -80,7 +80,7 @@ export default class TodoListComponent {
         }
     }
     _renderInput (that: any) {
-        return m('div.form-wrap.m-2', [
+        return m('div#todo-input.form-wrap.m-2', [
             m('form.form-group#todoForm', {onsubmit: (e) => { that._onSubmit(e) }}, [
                 m('div.card-header.columns', [
                     m('input#todoInput.form-input.column.col-10', {ref: 'todo-input', type: 'text', placeholder: 'What do you need to do?' }),

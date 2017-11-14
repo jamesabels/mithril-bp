@@ -4,7 +4,7 @@ import * as m from 'mithril';
 export default class EmptyComponent {
     view (vnode: any) {
         return [
-            m('div.empty', {style: {backgroundColor: 'white'} }, [
+            m('div#empty-todo.empty', {style: {backgroundColor: 'white'} }, [
                 m('div.empty-icon', [
                     m(`i.icon.icon-4x.text-${vnode.attrs.verb}.icon-${vnode.attrs.icon}`)
                 ]),

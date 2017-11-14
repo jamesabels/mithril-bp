@@ -13,7 +13,7 @@ export default class TodoComponent {
     view (vnode: any) {
         if(!vnode.attrs.editState) {
             return [
-                m('div.todo-wrap.card.mt-2', [
+                m('div#todo-wrap.card.mt-2', [
                     m('div.card-header.columns', [
                         m('h1.card-title.h5.column.col-10', vnode.attrs.todo.value),
                         m('div.button-wrap.column.col-ml-auto', [
